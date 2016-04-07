@@ -2,9 +2,9 @@ import {Component, Input} from 'angular2/core';
 
 @Component({
   selector: 'todo-list',
-  template: `<div>{{message}}</div>`
+  template: `<div>{{todos | json}}</div>`
 })
 
 export class TodoList {
-  @Input() message;
+  @Input() todos;
 }

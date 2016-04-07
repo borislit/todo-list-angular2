@@ -6,15 +6,15 @@ import {TodoList} from "./todo-list";
   selector: 'todo-app',
   template: `
             <todo-input (onItemAdded)=itemAdded($event)></todo-input>
-            <todo-list [message]="message"></todo-list>
+            <todo-list [todos]="todos"></todo-list>
             `,
   directives: [TodoInput, TodoList]
 })
 
 export class TodoApp {
-  message = 'Hello World!';
+  todos = ['Hello World!'];
 
   itemAdded(itemValue) {
-    this.message = itemValue;
+    this.todos.push(itemValue);
   }
 }
