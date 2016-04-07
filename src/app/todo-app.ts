@@ -1,12 +1,14 @@
 import {Component} from 'angular2/core';
 import {TodoInput} from "./todo-input";
+import {TodoList} from "./todo-list";
 
 @Component({
   selector: 'todo-app',
   template: `
             <todo-input (onItemAdded)=itemAdded($event)></todo-input>
-            <div>{{message}}</div>`,
-  directives: [TodoInput]
+            <todo-list [message]="message"></todo-list>
+            `,
+  directives: [TodoInput, TodoList]
 })
 
 export class TodoApp {
