@@ -3,15 +3,15 @@ import { Component } from 'angular2/core';
 @Component({
   selector: 'todo-input',
   template: `
-              <input #newItem [value]="currentItem" (change)="currentItem = newItem.value" />
-              <button (click)="addItem(newItem.value)">Add</button>`
+              <input [(ngModel)]="currentItem" />
+              <button (click)="addItem()">Add</button>`
 })
 export class TodoInput {
   currentItem = '';
   constructor() { }
 
-  addItem(item) {
-    console.log(item);
+  addItem() {
+    console.log(this.currentItem);
     this.currentItem = '';
   }
 }
