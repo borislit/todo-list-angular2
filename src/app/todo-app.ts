@@ -12,9 +12,11 @@ import {TodoList} from "./todo-list";
 })
 
 export class TodoApp {
-  todos = ['Hello World!'];
+  todos = [{value: 'Hello World!', completed: false},
+          {value: 'Hello World1!', completed: true},
+          {value: 'Hello World2!', completed: false}];
 
   itemAdded(itemValue) {
-    this.todos.push(itemValue);
+    this.todos.push({value: itemValue, completed: false});
   }
 }
