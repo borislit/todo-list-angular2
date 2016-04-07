@@ -2,6 +2,8 @@ import {Component} from 'angular2/core';
 import {TodoInput} from "./todo-input";
 import {TodoList} from "./todo-list";
 
+declare var fetch: any;
+
 @Component({
   selector: 'todo-app',
   template: `
@@ -12,9 +14,13 @@ import {TodoList} from "./todo-list";
 })
 
 export class TodoApp {
-  todos = [{value: 'Hello World!', completed: false},
-          {value: 'Hello World1!', completed: true},
-          {value: 'Hello World2!', completed: false}];
+  todos;
+
+  constructor() {
+    fetch('/app/todos.json').then(res => res.json()).then((response: any) => {
+      this.todos = response;
+    });
+  }
 
   itemAdded(itemValue) {
     this.todos.push({value: itemValue, completed: false});
