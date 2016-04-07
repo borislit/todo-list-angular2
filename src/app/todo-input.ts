@@ -1,4 +1,4 @@
-import { Component } from 'angular2/core';
+import { Component, Output, EventEmitter } from 'angular2/core';
 
 @Component({
   selector: 'todo-input',
@@ -8,10 +8,11 @@ import { Component } from 'angular2/core';
 })
 export class TodoInput {
   currentItem = '';
+  @Output() onItemAdded = new EventEmitter();
   constructor() { }
 
   addItem() {
-    console.log(this.currentItem);
+    this.onItemAdded.emit(this.currentItem);
     this.currentItem = '';
   }
 }
