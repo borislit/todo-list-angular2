@@ -6,6 +6,12 @@
   <base href="/">
   {{content-for 'head'}}
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    .completed {
+      color: blue;
+      background-color: grey;
+    }
+  </style>
 
   <!-- Service worker support is disabled by default.
        Install the worker script and uncomment to enable.
@@ -20,6 +26,7 @@
   -->
 </head>
 <body>
+  <h1 class="completed">Hello Todos</h1>
   <todo-app></todo-app>
 
   <script src="vendor/es6-shim/es6-shim.js"></script>
