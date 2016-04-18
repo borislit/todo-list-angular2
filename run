@@ -1,1 +1,1 @@
-ng serve --port 8080 --live-reload-port 8081
+./node_modules/angular-cli/bin/ng serve --port 8080 --live-reload-port 8081
