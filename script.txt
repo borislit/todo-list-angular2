@@ -3,9 +3,9 @@
 3. #ref syntax for getting value
 4. (click) syntax
 5. demonstrate (contextmenu) and $event
-6. @Output for adding item
-7. move to [value]/(change)
-8. move to [(ngModel)]
+6. move to [value]/(change)
+7. move to [(ngModel)]
+8. @Output for adding item
 9. add list component with *ngFor
 10. @Input for passing todos in
 11. move to service, first in list, then in input
